@@ -7,9 +7,9 @@ RUN apk update && \
     build-base \
     libffi-dev \
     python3-dev \
-    openssl-dev \
-    rsync
+    openssl-dev
 RUN pip install ansible --no-cache-dir
 RUN apk del .build-deps
+RUN apk add --no-cache rsync
 
 CMD ["ansible", "--help"]
