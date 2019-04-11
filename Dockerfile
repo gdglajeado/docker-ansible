@@ -10,6 +10,9 @@ RUN apk update && \
     openssl-dev
 RUN pip install ansible --no-cache-dir
 RUN apk del .build-deps
-RUN apk add --no-cache rsync
+RUN apk add --no-cache \
+    rsync \
+    openssh-client \
+    openssh-server
 
 CMD ["ansible", "--help"]
