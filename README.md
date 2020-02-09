@@ -13,7 +13,13 @@ Ansible is an open source software that automates software provisioning, configu
 ## How to build this image?
 
 ```bash
-docker build -t raffaeldutra/docker-ansible .
+docker build -t raffaeldutra/docker-ansible-<version> <version>/alpine
+```
+
+Example:
+
+```
+docker build -t raffaeldutra/docker-ansible-2.9 2.9/alpine
 ```
 
 ## How to run it?
@@ -21,5 +27,5 @@ docker build -t raffaeldutra/docker-ansible .
 ```bash
 docker run --rm \
 -v $(pwd):/root \
-raffaeldutra/docker-ansible ansible-playbook -i inventory/hosts playbook.yml
+raffaeldutra/docker-ansible-<version> ansible-playbook -i inventory/hosts playbook.yml
 ```
